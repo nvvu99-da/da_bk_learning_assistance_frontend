@@ -1,0 +1,15 @@
+{
+  "html.filetypes": [
+    "html",
+    "javascriptreact"
+  ],
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "javascript",
+    "javascriptreact",
+    "json"
+  ],
+  "yaml.schemas": {
+    "https://json.schemastore.org/github-workflow.json": ".github/workflows/*"
+  }
+}
