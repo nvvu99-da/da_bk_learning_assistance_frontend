@@ -4,6 +4,9 @@ const nextConfig = {
   env: {
     BACKEND_URL: "http://localhost:8813",
   },
+  images: {
+    domains: ["ui-avatars.com"],
+  },
 };
 
 module.exports = nextConfig;

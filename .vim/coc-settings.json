@@ -4,7 +4,7 @@
     "javascriptreact"
   ],
   "coc.preferences.formatOnSaveFiletypes": [
-    "css",
+    "scss",
     "javascript",
     "javascriptreact",
     "json"

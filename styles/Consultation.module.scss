@@ -1,0 +1,255 @@
+@import "./colors";
+
+$consultation-sidebar-width: 450px;
+$consultation-sidebar-header-height: 250px;
+$consultation-item-height: 70px;
+$consultation-avatar-width: 36px;
+$consultation-avatar-height: 36px;
+$consultation-header-height: 105px;
+$message-form-height: 60px;
+
+:export {
+  consultationAvatarWidth: $consultation-avatar-width;
+  consultationAvatarHeight: $consultation-avatar-height;
+}
+
+.page {
+  display: flex;
+  gap: 5px;
+
+  .sidebar {
+    flex-grow: 0;
+
+    width: $consultation-sidebar-width;
+    height: 100vh;
+    padding: 1rem;
+
+    background-color: $secondary-background-color;
+
+    overflow-y: scroll;
+
+    .sidebarHeader {
+      height: $consultation-sidebar-header-height;
+      padding: 1.5rem 0;
+      margin-bottom: 50px;
+
+      .logo {
+        height: calc($consultation-sidebar-header-height - 6.5rem);
+      }
+
+      .searchForm {
+        width: 100%;
+        position: relative;
+
+        .searchInput {
+          width: 100%;
+          padding-left: 3.5rem;
+          line-height: 3.5rem;
+
+          border: none;
+          border-radius: 10em;
+
+          background-color: $on-active-background-color;
+        }
+
+        .searchSubmitButton {
+          position: absolute;
+          top: 0;
+          left: 0;
+
+          height: 100%;
+          width: 3.5rem;
+          padding: 1rem;
+
+          font-size: 1.5rem;
+
+          background-color: transparent;
+          color: $primary-text-color;
+          border: none;
+
+          cursor: pointer;
+        }
+      }
+    }
+
+    .consultationsListHeader {
+      position: relative;
+      margin: 0 1.25em;
+
+      color: $secondary-text-color;
+      font-weight: bold;
+
+      span {
+        position: relative;
+        z-index: 2;
+        padding-right: 1.25em;
+        background-color: $secondary-background-color;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        height: 50%;
+        border-bottom: 2px solid $secondary-text-color;
+        z-index: 1;
+      }
+    }
+
+    .consultationsList {
+      padding: 0;
+
+      .consultationItem {
+        list-style: none;
+
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        height: $consultation-item-height;
+        padding: 0 1.25em;
+
+        .consultationAvatar {
+          flex-grow: 0;
+          border-radius: 50%;
+        }
+
+        .consultationTitle {
+          margin: 0;
+          padding: 0 1em;
+          font-size: 1.2em;
+          flex-grow: 1;
+        }
+
+        .consultationDate {
+          flex-grow: 0;
+          margin: 0;
+          font-size: 0.8em;
+        }
+
+        &.active,
+        &:hover {
+          background-color: $on-active-background-color;
+          color: $secondary-text-color;
+          border-radius: 10em;
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .main {
+    flex-grow: 1;
+
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    .consultationHeader,
+    .consultationContent,
+    .messageForm {
+      background-color: $primary-background-color;
+    }
+
+    .consultationHeader {
+      flex-grow: 0;
+
+      display: flex;
+      align-items: center;
+      padding: 1rem 2rem;
+      gap: 2rem;
+
+      height: $consultation-header-height;
+
+      .consultationHeaderAvatar {
+        flex-grow: 0;
+
+        img {
+          border-radius: 50%;
+        }
+      }
+
+      .consultationHeaderTitle {
+        flex-grow: 1;
+      }
+    }
+
+    .consultationContent {
+      flex-grow: 1;
+
+      overflow-y: scroll;
+
+      .message {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        padding: 2rem;
+
+        img {
+          border-radius: 50%;
+        }
+
+        .messageContent {
+          padding: 0.75rem;
+          margin: 0;
+
+          background-color: $secondary-text-color;
+          color: white;
+
+          border-radius: 2rem;
+        }
+
+        .messageTime {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          font-size: 0.9em;
+        }
+      }
+    }
+
+    .messageForm {
+      flex-grow: 0;
+
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      padding: 1rem 1.75rem;
+
+      svg {
+        flex-grow: 0;
+        font-size: 1.75rem;
+        color: $secondary-text-color;
+
+        cursor: pointer;
+      }
+
+      .messageInput {
+        flex-grow: 1;
+        padding: 0.5rem 1rem;
+        min-height: 2.5rem;
+        max-height: 5rem;
+
+        font-family: inherit;
+
+        border: none;
+        border-radius: 1.5em;
+
+        background-color: $on-active-background-color;
+
+        resize: none;
+        overflow: scroll !important;
+      }
+    }
+  }
+}
